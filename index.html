@@ -6,19 +6,16 @@
     <title>CLNR Pro — Neon Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* BASIC LAYOUT */
         body { margin:0; font-family:'Inter',sans-serif; background:#05050a; color:white; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         .hero { text-align:center; padding:50px 20px; display: flex; flex-direction: column; align-items: center; }
         .brand-tag { color:#3a86ff; font-weight:bold; letter-spacing: 3px; font-size: 11px; margin-bottom: 8px; text-transform: uppercase; }
         h1 { font-size:34px; text-shadow: 0 0 15px #3a86ff; margin: 0 0 25px 0; font-weight: 900; text-transform: uppercase; line-height: 1.1; }
         
-        /* NEON IMAGE STYLING */
         .product-img { 
             width:100%; max-width:500px; border-radius:15px; 
             box-shadow: 0 0 30px rgba(58,134,255,0.2); margin-bottom: 25px; display: block;
         }
         
-        /* PRICING */
         .price { font-size:38px; color:#00f2ff; font-weight:800; text-shadow: 0 0 10px rgba(0,242,255,0.5); }
         .old-price { text-decoration:line-through; color:#444; font-size:18px; margin-right:12px; }
         
@@ -28,7 +25,6 @@
             width: 100%; max-width: 320px; text-decoration: none; display: inline-block; border: none;
         }
 
-        /* REVIEWS SECTION */
         .section-reviews { padding:40px 20px; max-width:600px; margin:auto; border-top: 1px solid #1a1a2e; }
         h2 { text-align: center; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; font-size: 22px; color: #3a86ff; }
         .review-card { background: rgba(58, 134, 255, 0.05); border: 1px solid #1a1a2e; border-radius: 15px; padding: 20px; margin-bottom: 15px; }
@@ -37,11 +33,9 @@
         .review-stars { color: #f0c96e; font-size: 12px; }
         .review-text { font-size: 14px; color: #ccc; line-height: 1.4; margin: 0; }
 
-        /* CHECKOUT SECTION */
         .section-checkout { padding:60px 20px; max-width:500px; margin:auto; border-top: 1px solid #1a1a2e; text-align: center; }
         input { width:100%; padding:18px; margin:8px 0; background:#0a0a15; border:1px solid #1a1a2e; color:white; border-radius:12px; box-sizing:border-box; font-size:16px; outline: none; }
         
-        /* ORDER BUTTONS */
         .button-grid { display: flex; gap: 12px; margin-top: 25px; }
         .order-btn { flex: 1; padding: 20px; border-radius: 12px; font-weight: 800; border: none; text-transform: uppercase; font-size: 14px; cursor: pointer; }
         .wa-btn { background: #25D366; color: black; }
@@ -59,36 +53,34 @@
     <img src="clnr-neon-kit-1.svg" class="product-img" alt="CLNR Pro Neon Kit">
     
     <div class="price-container">
-        <span class="old-price">€39.99</span>
-        <span class="price">€19.99</span>
+        <span class="old-price">$29.99</span>
+        <span class="price">$14.99</span>
     </div>
     
-    <a href="#checkout" class="main-btn">ORDER NOW</a>
+    <a href="#checkout" class="main-btn">GET IT NOW</a>
 </div>
 
 <div class="section-reviews">
-    <h2>CUSTOMER REVIEWS</h2>
+    <h2>REAL REVIEWS</h2>
     <div class="review-card">
-        <div class="review-header"><span class="review-user">@Tech_Stan_Global</span><span class="review-stars">★★★★★</span></div>
-        <p class="review-text">"Absolutely amazing. The kit is super complete and those neon colors look stunning on my desk!"</p>
+        <div class="review-header"><span class="review-user">@Stan_Tech_Gear</span><span class="review-stars">★★★★★</span></div>
+        <p class="review-text">"Insane quality for this price. The neon design is fire!"</p>
     </div>
     <div class="review-card">
-        <div class="review-header"><span class="review-user">@Digital_Tess</span><span class="review-stars">★★★★★</span></div>
-        <p class="review-text">"My laptop and AirPods look brand new again. Fast shipping and great quality!"</p>
+        <div class="review-header"><span class="review-user">@Alex_Dropship</span><span class="review-stars">★★★★★</span></div>
+        <p class="review-text">"Finally a kit that actually cleans my keyboard properly. Highly recommended."</p>
     </div>
 </div>
 
 <div class="section-checkout" id="checkout">
-    <h2>SHIPPING DETAILS</h2>
-    <p style="font-size: 12px; color: #888; margin-bottom: 20px;">Enter your details and choose your preferred order method:</p>
-    
+    <h2>ORDER DETAILS</h2>
     <input type="text" id="name" placeholder="Full Name">
-    <input type="text" id="address" placeholder="Street + House Number">
-    <input type="text" id="city" placeholder="Zip Code + City">
+    <input type="text" id="address" placeholder="Shipping Address">
+    <input type="text" id="city" placeholder="City + Country">
     
     <div class="button-grid">
-        <button class="order-btn wa-btn" onclick="sendOrder('wa')">Order via WhatsApp ✅</button>
-        <button class="order-btn msg-btn" onclick="sendOrder('sms')">Order via SMS / iMessage ✉️</button>
+        <button class="order-btn wa-btn" onclick="sendOrder('wa')">WhatsApp Order ✅</button>
+        <button class="order-btn msg-btn" onclick="sendOrder('sms')">SMS / iMessage ✉️</button>
     </div>
 </div>
 
@@ -97,14 +89,14 @@
         const name = document.getElementById('name').value;
         const address = document.getElementById('address').value;
         const city = document.getElementById('city').value;
-        const myNumber = "31657088358"; // Your number
+        const myNumber = "31657088358";
 
         if (!name || !address || !city) { 
-            alert("Please fill in your name and address first!"); 
+            alert("Please fill in your details first!"); 
             return; 
         }
 
-        const message = `New Order: CLNR Pro Neon!\n\nName: ${name}\nAddress: ${address}\nCity: ${city}`;
+        const message = `New Order: CLNR Pro Neon ($14.99)\n\nName: ${name}\nAddress: ${address}\nCity: ${city}`;
         const encodedMessage = encodeURIComponent(message);
 
         if (method === 'wa') {
