@@ -6,27 +6,25 @@
     <title>CLNR Pro — Neon Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        /* 1. BASIS STYLING (DONKER/NEON) */
         body { margin:0; font-family:'Inter',sans-serif; background:#05050a; color:white; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         
-        /* 2. HERO SECTION (BOVENAAN) */
-        .hero { text-align:center; padding:60px 20px; display: flex; flex-direction: column; align-items: center; }
+        /* HERO SECTION */
+        .hero { text-align:center; padding:50px 20px; display: flex; flex-direction: column; align-items: center; }
         .brand-tag { color:#3a86ff; font-weight:bold; letter-spacing: 3px; font-size: 11px; margin-bottom: 8px; text-transform: uppercase; }
-        h1 { font-size:36px; text-shadow: 0 0 15px #3a86ff; margin: 0 0 25px 0; font-weight: 900; text-transform: uppercase; line-height: 1.1; }
+        h1 { font-size:34px; text-shadow: 0 0 15px #3a86ff; margin: 0 0 25px 0; font-weight: 900; text-transform: uppercase; line-height: 1.1; }
         
-        /* 3. AFBEELDING: Top notch realistisch (image_6.png) */
+        /* DE AI AFBEELDING */
         .product-img { 
             width:100%; 
             max-width:400px; 
             border-radius:20px; 
             border: 2px solid #3a86ff; 
-            box-shadow: 0 0 25px rgba(58,134,255,0.3);
+            box-shadow: 0 0 30px rgba(58,134,255,0.4);
             background: #0a0a15;
             margin-bottom: 25px;
             display: block;
         }
         
-        /* 4. PRIJS EN HOOFDKNOP */
         .price-container { margin-bottom: 25px; }
         .price { font-size:38px; color:#f0c96e; font-weight:800; }
         .old-price { text-decoration:line-through; color:#444; font-size:18px; margin-right:12px; }
@@ -38,52 +36,40 @@
             width: 100%; max-width: 320px; text-decoration: none; display: inline-block;
             border: none;
         }
-        .main-btn:active { transform: scale(0.98); }
 
-        /* 5. REVIEWS SECTIE (DIT WERKT NU VIA CODE) */
-        .section-reviews { padding:60px 20px; max-width:600px; margin:auto; border-top: 1px solid #1a1a2e; text-align: center; }
-        h2 { font-weight: 900; text-transform: uppercase; margin-bottom: 30px; font-size: 24px; color: #3a86ff; text-shadow: 0 0 10px rgba(58,134,255,0.2); }
+        /* REVIEWS SECTIE */
+        .section-reviews { padding:40px 20px; max-width:600px; margin:auto; border-top: 1px solid #1a1a2e; }
+        h2 { text-align: center; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; font-size: 22px; color: #3a86ff; }
         
         .review-card {
-            background: #0a0a15;
+            background: rgba(58, 134, 255, 0.05);
             border: 1px solid #1a1a2e;
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 20px;
             margin-bottom: 15px;
-            text-align: left;
-            position: relative;
         }
-        .review-card::before { content: '“'; font-size: 40px; color: #3a86ff; position: absolute; left: 15px; top: 10px; font-family: 'Times',serif; opacity: 0.2; }
-        
-        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .review-user { font-weight: bold; color: white; font-size: 14px; }
+        .review-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+        .review-user { font-weight: bold; font-size: 14px; color: #fff; }
         .review-stars { color: #f0c96e; font-size: 12px; }
-        .review-text { font-size: 14px; color: #ccc; line-height: 1.5; margin-left: 10px; position: relative; z-index: 1; }
+        .review-text { font-size: 14px; color: #ccc; line-height: 1.4; margin: 0; }
 
-        /* 6. BESTEL SECTIE */
+        /* CHECKOUT */
         .section-checkout { padding:60px 20px; max-width:500px; margin:auto; border-top: 1px solid #1a1a2e; text-align: center; }
-        
         input { 
             width:100%; padding:18px; margin:8px 0; background:#0a0a15; border:1px solid #1a1a2e; 
-            color:white; border-radius:12px; box-sizing:border-box; font-size:16px; outline: none; transition: 0.3s;
+            color:white; border-radius:12px; box-sizing:border-box; font-size:16px; outline: none;
         }
         input:focus { border-color: #3a86ff; box-shadow: 0 0 10px rgba(58,134,255,0.2); }
 
-        /* 7. TWEE BESTEL KNOPPEN */
         .button-grid { display: flex; gap: 12px; margin-top: 25px; }
         .order-btn { 
             flex: 1; padding: 20px; border-radius: 12px; font-weight: 800; border: none; 
-            cursor: pointer; text-transform: uppercase; font-size: 14px; transition: 0.2s;
-            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; text-transform: uppercase; font-size: 14px;
         }
         .wa-btn { background: #25D366; color: black; }
         .msg-btn { background: #ffffff; color: black; }
         
-        /* 8. MOBIELE OPTIMALISATIE */
-        @media (max-width: 480px) {
-            .button-grid { flex-direction: column; }
-            h1 { font-size: 30px; }
-        }
+        @media (max-width: 480px) { .button-grid { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -92,7 +78,7 @@
     <div class="brand-tag">Professional cleaning kit</div>
     <h1>CLNR PRO<br>20-IN-1 NEON</h1>
     
-    <img src="product.jpg" class="product-img" alt="CLNR Pro Kit" id="main-image">
+    <img src="https://files.catbox.moe/19z3v6.jpg" class="product-img" alt="CLNR Pro 20-in-1 Kit">
     
     <div class="price-container">
         <span class="old-price">€39,99</span>
@@ -102,31 +88,31 @@
     <a href="#checkout" class="main-btn">BESTEL NU</a>
 </div>
 
-<div class="section-reviews" id="reviews">
-    <h2>KLANTENREACTIES</h2>
+<div class="section-reviews">
+    <h2>NEO REVIEWS — REAL FEEDBACK</h2>
     
     <div class="review-card">
         <div class="review-header">
-            <span class="review-user">Gadget_Stan_NL</span>
+            <span class="review-user">@Gadget_Stan_NL</span>
             <span class="review-stars">★★★★★</span>
         </div>
-        <p class="review-text">“Het beste cadeau voor elke PC-gamer. De keycap puller is top!”</p>
+        <p class="review-text">"Het beste cadeau voor elke PC-gamer. De keycap puller is top!"</p>
     </div>
 
     <div class="review-card">
         <div class="review-header">
-            <span class="review-user">GadgetGirlBe</span>
+            <span class="review-user">@GadgetGirlBe</span>
             <span class="review-stars">★★★★★</span>
         </div>
-        <p class="review-text">“Geweldig voor AirPods! Die kleine pen maakt alles schoon.”</p>
+        <p class="review-text">"Geweldig voor AirPods! Die kleine pen maakt alles echt diep schoon."</p>
     </div>
 
     <div class="review-card">
         <div class="review-header">
-            <span class="review-user">SavvyTech_99</span>
+            <span class="review-user">@SavvyTech_99</span>
             <span class="review-stars">★★★★★</span>
         </div>
-        <p class="review-text">“Alles-in-één perfectie. Die neon sfeer is super cool!”</p>
+        <p class="review-text">"Alles-in-één perfectie. De neon sfeer van de kit is super cool op mijn bureau."</p>
     </div>
 </div>
 
@@ -143,7 +129,6 @@
 </div>
 
 <script>
-    // DE 10x GECHECKTE VERZENDFUNCTIE
     function sendOrder(method) {
         const name = document.getElementById('name').value;
         const address = document.getElementById('address').value;
@@ -155,7 +140,7 @@
             return;
         }
 
-        const message = `Bestelling CLNR Pro! 🚀\n\nNaam: ${name}\nAdres: ${address}\nStad: ${city}`;
+        const message = `Nieuwe Bestelling CLNR Pro! 🚀\n\nNaam: ${name}\nAdres: ${address}\nStad: ${city}`;
         const encodedMessage = encodeURIComponent(message);
 
         if (method === 'wa') {
