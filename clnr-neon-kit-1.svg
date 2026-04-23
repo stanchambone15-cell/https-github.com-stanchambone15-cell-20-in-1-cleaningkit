@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0f"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00f5ff"/>
+      <stop offset="50%" style="stop-color:#b400ff"/>
+      <stop offset="100%" style="stop-color:#00f5ff"/>
+    </linearGradient>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0d0d1a"/>
+    </linearGradient>
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a3e"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#00f5ff" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.07">
+    <line x1="0" y1="100" x2="800" y2="100" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="800" y2="200" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="800" y2="300" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="800" y2="400" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="0" y1="500" x2="800" y2="500" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="100" y1="0" x2="100" y2="600" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="600" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="600" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="600" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="500" y1="0" x2="500" y2="600" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="600" stroke="#00f5ff" stroke-width="0.5"/>
+    <line x1="700" y1="0" x2="700" y2="600" stroke="#00f5ff" stroke-width="0.5"/>
+  </g>
+
+  <!-- Ambient glow circles -->
+  <circle cx="200" cy="300" r="180" fill="#b400ff" opacity="0.04"/>
+  <circle cx="600" cy="300" r="180" fill="#00f5ff" opacity="0.04"/>
+
+  <!-- Main product box -->
+  <rect x="260" y="140" width="280" height="320" rx="16" fill="url(#boxGrad)" filter="url(#shadow)"/>
+  <rect x="260" y="140" width="280" height="320" rx="16" fill="none" stroke="url(#neonGlow)" stroke-width="1.5"/>
+
+  <!-- Box lid/top stripe -->
+  <rect x="260" y="140" width="280" height="50" rx="16" fill="#111128"/>
+  <rect x="260" y="170" width="280" height="20" fill="#111128"/>
+
+  <!-- CLNR Logo on box -->
+  <text x="400" y="175" font-family="'Courier New', monospace" font-size="22" font-weight="bold" fill="url(#neonGlow)" text-anchor="middle" filter="url(#glow)">CLNR PRO</text>
+
+  <!-- 20-in-1 badge on box -->
+  <rect x="340" y="185" width="120" height="28" rx="4" fill="#00f5ff" opacity="0.15"/>
+  <rect x="340" y="185" width="120" height="28" rx="4" fill="none" stroke="#00f5ff" stroke-width="1"/>
+  <text x="400" y="204" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#00f5ff" text-anchor="middle">20-IN-1 KIT</text>
+
+  <!-- Tools displayed inside box -->
+  <!-- Brush 1 -->
+  <rect x="285" y="230" width="12" height="70" rx="3" fill="url(#toolGrad)" stroke="#00f5ff" stroke-width="0.8"/>
+  <ellipse cx="291" cy="228" rx="8" ry="5" fill="#00f5ff" opacity="0.8"/>
+  <text x="291" y="315" font-family="monospace" font-size="7" fill="#00f5ff" text-anchor="middle" opacity="0.7">BRUSH</text>
+
+  <!-- Brush 2 -->
+  <rect x="305" y="235" width="12" height="65" rx="3" fill="url(#toolGrad)" stroke="#b400ff" stroke-width="0.8"/>
+  <ellipse cx="311" cy="233" rx="8" ry="5" fill="#b400ff" opacity="0.8"/>
+
+  <!-- Cleaning pen -->
+  <rect x="325" y="225" width="10" height="80" rx="5" fill="#1e1e3a" stroke="#00f5ff" stroke-width="1"/>
+  <rect x="325" y="225" width="10" height="20" rx="5" fill="#00f5ff" opacity="0.6"/>
+  <text x="330" y="320" font-family="monospace" font-size="7" fill="#00f5ff" text-anchor="middle" opacity="0.7">PEN</text>
+
+  <!-- Spray bottle (stylized) -->
+  <rect x="345" y="230" width="20" height="60" rx="4" fill="url(#toolGrad)" stroke="#b400ff" stroke-width="0.8"/>
+  <rect x="355" y="222" width="8" height="15" rx="2" fill="#b400ff" opacity="0.6"/>
+  <rect x="363" y="226" width="14" height="6" rx="2" fill="#b400ff" opacity="0.4"/>
+  <text x="355" y="305" font-family="monospace" font-size="7" fill="#b400ff" text-anchor="middle" opacity="0.7">SPRAY</text>
+
+  <!-- Cloth/wipe -->
+  <rect x="375" y="240" width="40" height="45" rx="4" fill="#1a1a35" stroke="#00f5ff" stroke-width="0.8"/>
+  <line x1="380" y1="250" x2="410" y2="250" stroke="#00f5ff" stroke-width="0.5" opacity="0.5"/>
+  <line x1="380" y1="258" x2="410" y2="258" stroke="#00f5ff" stroke-width="0.5" opacity="0.5"/>
+  <line x1="380" y1="266" x2="410" y2="266" stroke="#00f5ff" stroke-width="0.5" opacity="0.5"/>
+  <text x="395" y="298" font-family="monospace" font-size="7" fill="#00f5ff" text-anchor="middle" opacity="0.7">CLOTH</text>
+
+  <!-- Tweezer -->
+  <line x1="428" y1="225" x2="432" y2="295" stroke="#b400ff" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="438" y1="225" x2="434" y2="295" stroke="#b400ff" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="433" y="310" font-family="monospace" font-size="7" fill="#b400ff" text-anchor="middle" opacity="0.7">TWZR</text>
+
+  <!-- Microfiber -->
+  <rect x="450" y="238" width="28" height="38" rx="8" fill="#1e1e3a" stroke="#00f5ff" stroke-width="0.8"/>
+  <text x="464" y="262" font-family="monospace" font-size="7" fill="#00f5ff" text-anchor="middle" opacity="0.9">MF</text>
+  <text x="464" y="290" font-family="monospace" font-size="7" fill="#00f5ff" text-anchor="middle" opacity="0.7">FIBER</text>
+
+  <!-- Air blower stylized -->
+  <ellipse cx="510" cy="270" rx="18" ry="28" fill="url(#toolGrad)" stroke="#b400ff" stroke-width="0.8"/>
+  <rect x="502" y="295" width="16" height="10" rx="3" fill="#b400ff" opacity="0.5"/>
+  <text x="510" y="318" font-family="monospace" font-size="7" fill="#b400ff" text-anchor="middle" opacity="0.7">BLWR</text>
+
+  <!-- Bottom row tools -->
+  <!-- Cotton swabs -->
+  <line x1="295" y1="340" x2="295" y2="400" stroke="#888" stroke-width="2"/>
+  <ellipse cx="295" cy="338" rx="6" ry="4" fill="white" opacity="0.8"/>
+  <ellipse cx="295" cy="402" rx="6" ry="4" fill="white" opacity="0.8"/>
+
+  <line x1="315" y1="340" x2="315" y2="400" stroke="#888" stroke-width="2"/>
+  <ellipse cx="315" cy="338" rx="6" ry="4" fill="white" opacity="0.8"/>
+  <ellipse cx="315" cy="402" rx="6" ry="4" fill="white" opacity="0.8"/>
+  <text x="305" y="420" font-family="monospace" font-size="7" fill="#fff" text-anchor="middle" opacity="0.6">SWABS</text>
+
+  <!-- Keycap puller -->
+  <rect x="340" y="340" width="30" height="12" rx="3" fill="url(#toolGrad)" stroke="#00f5ff" stroke-width="0.8"/>
+  <line x1="345" y1="352" x2="342" y2="380" stroke="#00f5ff" stroke-width="1.5"/>
+  <line x1="366" y1="352" x2="369" y2="380" stroke="#00f5ff" stroke-width="1.5"/>
+  <line x1="342" y1="380" x2="369" y2="380" stroke="#00f5ff" stroke-width="1.5"/>
+  <text x="355" y="400" font-family="monospace" font-size="7" fill="#00f5ff" text-anchor="middle" opacity="0.7">K-PULL</text>
+
+  <!-- Screen wipe packet -->
+  <rect x="385" y="345" width="45" height="35" rx="3" fill="#0d1a2e" stroke="#00f5ff" stroke-width="0.8"/>
+  <text x="407" y="362" font-family="monospace" font-size="8" fill="#00f5ff" text-anchor="middle" opacity="0.9">SCREEN</text>
+  <text x="407" y="373" font-family="monospace" font-size="8" fill="#00f5ff" text-anchor="middle" opacity="0.9">WIPE</text>
+  <text x="407" y="393" font-family="monospace" font-size="7" fill="#00f5ff" text-anchor="middle" opacity="0.5">×10</text>
+
+  <!-- Silicone brush -->
+  <rect x="445" y="340" width="14" height="60" rx="3" fill="#1a2a1a" stroke="#00ff88" stroke-width="0.8"/>
+  <rect x="441" y="390" width="22" height="12" rx="2" fill="#00ff88" opacity="0.6"/>
+  <text x="452" y="415" font-family="monospace" font-size="7" fill="#00ff88" text-anchor="middle" opacity="0.7">SIL</text>
+
+  <!-- Neon corner accents on box -->
+  <path d="M260,155 L260,140 L275,140" fill="none" stroke="#00f5ff" stroke-width="2" filter="url(#glow)"/>
+  <path d="M525,155 L525,140 L510,140" fill="none" stroke="#00f5ff" stroke-width="2" filter="url(#glow)"/>
+  <path d="M260,445 L260,460 L275,460" fill="none" stroke="#b400ff" stroke-width="2" filter="url(#glow)"/>
+  <path d="M525,445 L525,460 L510,460" fill="none" stroke="#b400ff" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Left side info panel -->
+  <rect x="30" y="180" width="180" height="240" rx="10" fill="#0d0d1a" stroke="#b400ff" stroke-width="1" opacity="0.8"/>
+  <text x="120" y="210" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#b400ff" text-anchor="middle" filter="url(#glow)">COMPATIBEL MET</text>
+
+  <!-- Device icons text list -->
+  <text x="50" y="238" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">📱 Smartphone</text>
+  <text x="50" y="260" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">💻 Laptop</text>
+  <text x="50" y="282" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">🎮 Controller</text>
+  <text x="50" y="304" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">⌨️ Keyboard</text>
+  <text x="50" y="326" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">🖥️ Monitor</text>
+  <text x="50" y="348" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">🎧 Headset</text>
+  <text x="50" y="370" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">🖨️ Printer</text>
+  <text x="50" y="392" font-family="monospace" font-size="11" fill="#fff" opacity="0.9">📷 Camera</text>
+
+  <!-- Right side panel -->
+  <rect x="590" y="180" width="180" height="240" rx="10" fill="#0d0d1a" stroke="#00f5ff" stroke-width="1" opacity="0.8"/>
+  <text x="680" y="210" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#00f5ff" text-anchor="middle" filter="url(#glow)">WAT ZIT ERIN?</text>
+
+  <text x="605" y="232" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 5× Reinigingsborstels</text>
+  <text x="605" y="252" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 2× Microfiber doekjes</text>
+  <text x="605" y="272" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 2× Siliconen borstel</text>
+  <text x="605" y="292" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 1× Luchtblazer</text>
+  <text x="605" y="312" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 1× Reinigingsspray</text>
+  <text x="605" y="332" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 1× Keycap puller</text>
+  <text x="605" y="352" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 1× Pincet</text>
+  <text x="605" y="372" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ 10× Screen wipes</text>
+  <text x="605" y="392" font-family="monospace" font-size="10" fill="#00f5ff" opacity="0.8">✦ Cotton swabs ×20</text>
+
+  <!-- Title at top -->
+  <text x="400" y="60" font-family="'Courier New', monospace" font-size="38" font-weight="bold" fill="url(#neonGlow)" text-anchor="middle" filter="url(#softGlow)" letter-spacing="4">CLNR PRO</text>
+  <text x="400" y="90" font-family="'Courier New', monospace" font-size="16" fill="#ffffff" text-anchor="middle" opacity="0.7" letter-spacing="8">20-IN-1 NEON EDITION</text>
+
+  <!-- Top neon line -->
+  <line x1="160" y1="100" x2="640" y2="100" stroke="url(#neonGlow)" stroke-width="1" opacity="0.5"/>
+
+  <!-- Price badge bottom -->
+  <rect x="300" y="478" width="200" height="50" rx="25" fill="#0d0d1a" stroke="url(#neonGlow)" stroke-width="1.5" filter="url(#glow)"/>
+  <text x="370" y="509" font-family="'Courier New', monospace" font-size="14" fill="#555" text-anchor="middle" text-decoration="line-through">€39,99</text>
+  <text x="440" y="509" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#00f5ff" text-anchor="middle" filter="url(#glow)">€19,99</text>
+
+  <!-- Bottom tagline -->
+  <text x="400" y="555" font-family="'Courier New', monospace" font-size="11" fill="#ffffff" text-anchor="middle" opacity="0.4" letter-spacing="3">PROFESSIONAL CLEANING KIT — FREE SHIPPING</text>
+
+  <!-- Decorative dots -->
+  <circle cx="400" cy="110" r="3" fill="#00f5ff" filter="url(#glow)"/>
+  <circle cx="380" cy="110" r="2" fill="#b400ff" opacity="0.7"/>
+  <circle cx="420" cy="110" r="2" fill="#b400ff" opacity="0.7"/>
+</svg>
