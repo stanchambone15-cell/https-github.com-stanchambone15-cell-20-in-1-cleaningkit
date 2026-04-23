@@ -6,17 +6,19 @@
     <title>CLNR Pro — Neon Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
+        /* BASIS LAYOUT */
         body { margin:0; font-family:'Inter',sans-serif; background:#05050a; color:white; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         .hero { text-align:center; padding:50px 20px; display: flex; flex-direction: column; align-items: center; }
         .brand-tag { color:#3a86ff; font-weight:bold; letter-spacing: 3px; font-size: 11px; margin-bottom: 8px; text-transform: uppercase; }
         h1 { font-size:34px; text-shadow: 0 0 15px #3a86ff; margin: 0 0 25px 0; font-weight: 900; text-transform: uppercase; line-height: 1.1; }
         
-        /* Gecorrigeerd voor jouw nieuwe SVG bestand */
+        /* JOUW NEON AFBEELDING */
         .product-img { 
             width:100%; max-width:500px; border-radius:15px; 
             box-shadow: 0 0 30px rgba(58,134,255,0.2); margin-bottom: 25px; display: block;
         }
         
+        /* PRIJS */
         .price { font-size:38px; color:#00f2ff; font-weight:800; text-shadow: 0 0 10px rgba(0,242,255,0.5); }
         .old-price { text-decoration:line-through; color:#444; font-size:18px; margin-right:12px; }
         
@@ -26,22 +28,25 @@
             width: 100%; max-width: 320px; text-decoration: none; display: inline-block; border: none;
         }
 
+        /* REVIEWS */
         .section-reviews { padding:40px 20px; max-width:600px; margin:auto; border-top: 1px solid #1a1a2e; }
         h2 { text-align: center; font-weight: 900; text-transform: uppercase; margin-bottom: 30px; font-size: 22px; color: #3a86ff; }
-        
         .review-card { background: rgba(58, 134, 255, 0.05); border: 1px solid #1a1a2e; border-radius: 15px; padding: 20px; margin-bottom: 15px; }
         .review-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
         .review-user { font-weight: bold; font-size: 14px; color: #fff; }
         .review-stars { color: #f0c96e; font-size: 12px; }
         .review-text { font-size: 14px; color: #ccc; line-height: 1.4; margin: 0; }
 
+        /* CHECKOUT SECTIE */
         .section-checkout { padding:60px 20px; max-width:500px; margin:auto; border-top: 1px solid #1a1a2e; text-align: center; }
         input { width:100%; padding:18px; margin:8px 0; background:#0a0a15; border:1px solid #1a1a2e; color:white; border-radius:12px; box-sizing:border-box; font-size:16px; outline: none; }
         
+        /* DE TWEE BESTELKNOPPEN */
         .button-grid { display: flex; gap: 12px; margin-top: 25px; }
         .order-btn { flex: 1; padding: 20px; border-radius: 12px; font-weight: 800; border: none; text-transform: uppercase; font-size: 14px; cursor: pointer; }
-        .wa-btn { background: #25D366; color: black; }
-        .msg-btn { background: #ffffff; color: black; }
+        .wa-btn { background: #25D366; color: black; } /* WhatsApp Groen */
+        .msg-btn { background: #ffffff; color: black; } /* SMS Wit */
+        
         @media (max-width: 480px) { .button-grid { flex-direction: column; } }
     </style>
 </head>
@@ -65,22 +70,25 @@
     <h2>KLANTENREACTIES</h2>
     <div class="review-card">
         <div class="review-header"><span class="review-user">@Gadget_Stan_NL</span><span class="review-stars">★★★★★</span></div>
-        <p class="review-text">"Het beste cadeau voor elke PC-gamer. De kit is super compleet en ziet er vet uit!"</p>
+        <p class="review-text">"Echt een top ding. De kit is super compleet en die neon kleuren zijn echt vet!"</p>
     </div>
     <div class="review-card">
-        <div class="review-header"><span class="review-user">@GadgetGirlBe</span><span class="review-stars">★★★★★</span></div>
-        <p class="review-text">"Geweldig voor AirPods! Die kleine pen maakt alles echt diep schoon."</p>
+        <div class="review-header"><span class="review-user">@Tess_Dropship</span><span class="review-stars">★★★★★</span></div>
+        <p class="review-text">"Mijn laptop en oortjes zijn weer als nieuw. Snelle service ook!"</p>
     </div>
 </div>
 
 <div class="section-checkout" id="checkout">
     <h2>VERZENDGEGEVENS</h2>
+    <p style="font-size: 12px; color: #888; margin-bottom: 20px;">Vul je gegevens in en kies hoe je wilt bestellen:</p>
+    
     <input type="text" id="name" placeholder="Volledige Naam">
     <input type="text" id="address" placeholder="Straat + Huisnummer">
     <input type="text" id="city" placeholder="Postcode + Woonplaats">
+    
     <div class="button-grid">
-        <button class="order-btn wa-btn" onclick="sendOrder('wa')">WhatsApp ✅</button>
-        <button class="order-btn msg-btn" onclick="sendOrder('sms')">iMessage ✉️</button>
+        <button class="order-btn wa-btn" onclick="sendOrder('wa')">Bestel via WhatsApp ✅</button>
+        <button class="order-btn msg-btn" onclick="sendOrder('sms')">Bestel via SMS / iMessage ✉️</button>
     </div>
 </div>
 
@@ -89,11 +97,25 @@
         const name = document.getElementById('name').value;
         const address = document.getElementById('address').value;
         const city = document.getElementById('city').value;
-        if (!name || !address || !city) { alert("Vul alles in!"); return; }
-        const msg = encodeURIComponent(`Bestelling CLNR Pro Neon!\nNaam: ${name}\nAdres: ${address}\nStad: ${city}`);
-        if (method === 'wa') window.location.href = `https://wa.me/31657088358?text=${msg}`;
-        else window.location.href = `sms:31657088358?body=${msg}`;
+        const myNumber = "31657088358"; // Jouw nummer
+
+        if (!name || !address || !city) { 
+            alert("Vergeet niet je naam en adres in te vullen!"); 
+            return; 
+        }
+
+        const message = `Nieuwe Bestelling CLNR Pro Neon!\n\nNaam: ${name}\nAdres: ${address}\nStad: ${city}`;
+        const encodedMessage = encodeURIComponent(message);
+
+        if (method === 'wa') {
+            // Opent WhatsApp
+            window.location.href = `https://wa.me/${myNumber}?text=${encodedMessage}`;
+        } else {
+            // Opent de SMS app (werkt op iPhone en Android)
+            window.location.href = `sms:${myNumber}?body=${encodedMessage}`;
+        }
     }
 </script>
+
 </body>
 </html>
