@@ -9,23 +9,28 @@
     body { margin:0; font-family:'Inter',sans-serif; background:#05050a; color:white; scroll-behavior: smooth; }
     .hero { text-align:center; padding:60px 20px; }
     h1 { font-size:36px; text-shadow: 0 0 10px #3a86ff, 0 0 20px #3a86ff; margin-bottom: 10px; font-weight: 900; text-transform: uppercase; }
+    /* Dit zorgt dat de foto mooi groot en scherp is */
     .product-img { width:100%; max-width:400px; border-radius:15px; margin: 20px 0; border: 2px solid #3a86ff; box-shadow: 0 0 20px rgba(58,134,255,0.6); }
     .price { font-size:32px; color:#f0c96e; font-weight:800; }
     .old { text-decoration:line-through; color:#444; font-size:18px; margin-right:10px; }
     .btn { background:transparent; padding:18px 30px; border: 2px solid #3a86ff; color:white; cursor:pointer; font-size:18px; font-weight:700; margin-top:20px; width:100%; max-width:400px; border-radius:10px; display:inline-block; text-decoration:none; box-shadow: inset 0 0 10px #3a86ff, 0 0 15px #3a86ff; text-transform: uppercase; }
     .section { padding:60px 20px; max-width:600px; margin:auto; border-top: 1px solid #1a1a2e; }
-    input { width:100%; padding:15px; margin:10px 0; background:#0a0a15; border:1px solid #3a86ff; color:white; border-radius:8px; box-sizing:border-box; }
+    input { width:100%; padding:15px; margin:10px 0; background:#0a0a15; border:1px solid #3a86ff; color:white; border-radius:8px; box-sizing:border-box; font-size:16px; }
     .wa-btn { background:#25D366; border:none; box-shadow: 0 0 15px #25D366; color: black; font-weight: 800; }
 </style>
 </head>
 <body>
+
 <div class="hero">
     <p style="color:#3a86ff; font-weight:bold; letter-spacing: 3px;">ULTIMATE TECH CARE</p>
     <h1>CLNR PRO NEON</h1>
-    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8f0997e076634860803565e71887e2216.jpg" class="product-img" alt="20-in-1 Kit">
+    
+    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S8f0997e076634860803565e71887e2216.jpg" class="product-img" alt="20-in-1 Cleaning Kit">
+    
     <p><span class="old">€39,99</span> <span class="price">€19,99</span></p>
     <button class="btn" onclick="scrollToCheckout()">BESTEL NU</button>
 </div>
+
 <div class="section" id="checkout">
     <h2>BESTELLEN VIA WHATSAPP</h2>
     <input id="name" placeholder="Je Naam">
@@ -33,16 +38,28 @@
     <input id="city" placeholder="Stad">
     <button class="btn wa-btn" onclick="order()">VERZEND BESTELLING ✅</button>
 </div>
+
 <script>
-function scrollToCheckout(){ document.getElementById("checkout").scrollIntoView({behavior:"smooth"}); }
+function scrollToCheckout(){
+    document.getElementById("checkout").scrollIntoView({behavior:"smooth"});
+}
+
 function order(){
     let name = document.getElementById("name").value;
     let address = document.getElementById("address").value;
     let city = document.getElementById("city").value;
-    if(!name || !address || !city){ alert("Vul alles in!"); return; }
-    let msg = `Bestelling CLNR Kit 🚀\nNaam: ${name}\nAdres: ${address}\nStad: ${city}`;
-    window.location.href = `https://wa.me/31657088358?text=${encodeURIComponent(msg)}`;
+
+    if(!name || !address || !city){
+        alert("Vul alle gegevens in!");
+        return;
+    }
+
+    let myNumber = "31657088358"; 
+    let text = `Nieuwe Bestelling! 🚀\n\nProduct: CLNR Pro 20-in-1\nPrijs: €19,99\n\nNaam: ${name}\nAdres: ${address}\nStad: ${city}`;
+
+    window.location.href = "https://wa.me/" + myNumber + "?text=" + encodeURIComponent(text);
 }
 </script>
+
 </body>
 </html>
